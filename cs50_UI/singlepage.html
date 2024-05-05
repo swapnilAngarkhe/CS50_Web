@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display:none;
+            
+        }
+    </style>
+
+    <script>
+        function showPage(page){
+            document.querySelectorAll(`div`).forEach(div=>{
+                div.style.display='none';
+            })
+            document.querySelector(`#${page}`).style.display='block';
+        }
+
+        addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('button').forEach(button=>{
+                button.onclick=function() {
+                    showPage(this.dataset.page);
+                    history.pushState({page: page}, "", `page${page}`);
+                }
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <button data-page="page1"> Load 1</button>
+    <button data-page="page2"> Load 2</button>
+    <button data-page="page3"> Load 3</button>
+    <div id="page1">This is Page 1</div>
+    <div id="page2">This is page 2</div>
+    <div id="page3">This is page 3</div>
+</body>
+</html>

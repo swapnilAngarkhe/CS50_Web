@@ -1,0 +1,4 @@
+Single Page applicaiton
+
+is when you keep the default dom (portion) of the page as it is
+and replace the portion that is supposed to be changed.
