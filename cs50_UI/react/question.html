@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+
+    <div id="app">
+
+    </div>
+
+    <script type="text/babel">
+        
+        const [state, setState]= React.userState({
+            num1:1,
+            num2:2
+        });
+
+        function App(){
+          <div>
+           <div>{state.num1} + {staet.num2}</div> 
+           <input />
+          </div>
+        }
+        ReactDOM.render(<App/>, document.querySelector('#app'));
+    </script>
+
+  </body>
+</html>
